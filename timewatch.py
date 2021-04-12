@@ -125,7 +125,7 @@ class TimeWatch:
 
         # Scenario 2: The duration is below 9 hours, and only one punch at the BEGINNING of the day, we need to update2.
         elif date_duration[date][2] == 'punched_no_change' and date_duration[date][4] == 'none' and \
-                date_duration[date][0][0] < 9:
+                current_date_duration_hour < 9:
             start = date_duration[date][1][0], date_duration[date][1][1]
             end = date_duration[date][1][0] + 9, (date_duration[date][1][1] + jitter)  # setting random end value
             if end[1] > 59:
